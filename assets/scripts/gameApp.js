@@ -43,10 +43,10 @@ function healPlayerHandler() {
   let healValue;
   if (currentPlayerHealth >= chosenMaxLife - HEAL_VALUE) {
     alert("you cant't heal to more then  your max initial healt");
+    healValue = chosenMaxLife - currentPlayerHealth;
   }
-  healValue = chosenMaxLife - currentPlayerHealth;
-  const heal = increasePlayerHealth(HEAL_VALUE);
-  currentPlayerHealth += heal;
+  increasePlayerHealth(HEAL_VALUE);
+  currentPlayerHealth += HEAL_VALUE;
   endRound();
 }
 
