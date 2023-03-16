@@ -166,7 +166,7 @@ function attackMonster(mode) {
   // if (mode === MODE_ATTACK) {
   //   maxDamage = ATTACK_VALUE;
   //   logEvent = LOG_EVENT_PLAYER_ATTACK;
-  // } else if (mode === MODE_STRONG_ATTACK) {
+  // } else if (mode === MODE_STRONG_ATTACK) {+
   //   maxDamage = STRONG_ATTACK_VALUE;
   //   logEvent = LOG_EVENT_PLAYER_STRONG_ATTACK;
   // }
@@ -203,7 +203,22 @@ function healPlayerHandler() {
 }
 
 function printLogHandler() {
-  console.log(battleLog);
+  for (let i = 0; i < 3; i++) {
+    console.log("------------");
+  }
+  // for (let i = 10; i > 0;) {
+  //   i--;
+  //   console.log(i);
+  // }
+  // for (let i = 0; i < battleLog.length; i++) {
+  //   console.log(battleLog[i]);
+  // }
+  let i = 0;
+  for (const logEntry of battleLog) {
+    console.log(logEntry);
+    console.log(i);
+    i++;
+  }
 }
 
 attackBtn.addEventListener("click", attackHandler);
